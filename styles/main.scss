@@ -1,0 +1,309 @@
+//bootstrap icons
+@import "./scss/normalize";
+@import "./scss/effects";
+@import "./scss/vars";
+@import "./scss/contac-us";
+.mainColor{
+    color:$main_color;
+}
+.withe{
+    color:white;
+}
+.mim-btn,%btn {
+    color: white;
+    background-color: $main_color;
+    border: none;
+    border-radius: 10px;
+    padding: 0.375rem 0.75rem;
+    &:hover {
+        background-color: $hover_color;
+    }
+    &:focus {
+        background-color: $focus_color;
+    }
+    &:active {
+        background-color: $main_color;
+    }
+}
+body {
+    color: black;
+}
+.text-md{
+    width: 60%;
+    margin:20% auto;
+    display: none;
+   
+}
+
+.text-animation{
+   
+    ul{
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        li{
+            color: white;
+            font-size: 60px;
+            text-align: center;
+        }
+        
+    }
+}
+@media only screen and (max-width: 753px) {
+    .text-md{
+        width: 80%;
+    }
+}
+
+.left{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    bottom: 10px;
+    right: -10px;
+    top: 20%;
+    &:hover{
+        right: -5px;
+        
+    }
+    i{
+        color: white;
+        opacity: 0.2;
+        font-size: 25px;
+        padding: 10px;
+        margin: 10px;
+        background-color: $main_color;
+        border-radius: 20px;
+        &:hover{
+            opacity: 1;
+            transform: scale(1.1);
+        }
+    }
+}
+.fa-list{
+    padding: 5px;
+    color: black;
+    font-size: 25px;
+}
+.nav-form {
+    margin-right: 1%;
+}
+.navbar-collapse {
+    flex-grow: 0.6;
+}
+.input,
+.search-btn {
+    display: none;
+}
+.nav-form {
+    i {
+        color: $main_color;
+        font-weight: bolder;
+        border-radius: 3px;
+        place-items: center;
+        padding: 0.375rem 0.75rem;
+    }
+    input {
+        border-radius: 10px;
+        &::placeholder {
+            color: $placeholder_coler;
+        }
+        &:focus {
+            color: $main_color;
+        }
+    }
+    button {
+        @extend %btn;
+    }
+}
+
+.ul-navbar {
+    width: 80%;
+    li {
+        padding: 6px;
+        margin-right: 5%;
+        a {
+            color: $main_color;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        @include animate-up(1.1);
+        @include line-from-left(0.5s, $main_color, 0, -3);
+    }
+}
+@media only screen and (max-width: 991px) {
+    .ul-navbar {
+        align-items: center;
+        width: 100%;
+        li {
+            padding: 6px;
+            margin-right: 5%;
+            a {
+                color: $main_color;
+                text-decoration: none;
+                font-weight: 500;
+            }
+            @include animate-up(1);
+            @include line-from-left(0.4s, $main_color, 0, -2);
+        }
+    }
+    .nav-form {
+        display: flex;
+        justify-content: center;
+        i {
+            color: $main_color;
+            font-weight: bolder;
+            border-radius: 3px;
+            place-items: center;
+            padding: 0.375rem 0.75rem;
+        }
+    }
+}
+.navbar-toggler {
+    border-radius: 10px;
+}
+
+//container
+.cont{
+    margin-top: 100px;
+}
+.center {
+    align-items: center;
+}
+.animations {
+    width: 100%;
+    height: 100%;
+    img {
+        position: relative;
+        width: 100%;
+        @include image-animation(-3px,6s)
+    }
+}
+.title {
+    div {
+        display: grid;
+        place-items: center;
+        h1,
+        h3 {
+            color: $main_color;
+            text-align: center;
+            font-size: 2vw;
+            
+        }
+        h1{
+            font-size:5vw;
+        }
+        button {
+            padding: 10px 20px;
+            @extend %btn;
+            &:hover{
+                padding: 10px 23px;
+            }
+        }
+    }
+}
+.modal-content {
+    border-radius: 20px;
+    align-items: center;
+    .btn-close{
+        @extend %btn;
+        padding: 10px 10px;
+        margin-left: 10px;
+    }
+    .modal-title{
+        color: $main_color;
+        font-weight: 600;
+    }
+    .modal-body {
+        display: flex;
+        align-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center; 
+        img {
+            width: 50%;
+            @include image-animation(-10px,10s);
+        }
+        h4{
+            position: relative;
+            color: $main_color;
+            border-radius: 40px;
+            padding: 7px;
+            line-height: 35px;
+            box-shadow: 0px 10px 10px -9px rgba(180,192,209,0.6);
+            @include image-animation(-10px,8s)
+        }
+    }
+    .modal-footer{
+        button{
+            padding:10px 30px;
+        }
+    }
+   
+}
+
+
+//content
+
+
+
+.card{
+    width: 300px;
+    margin-left: 10px;
+    text-align: center;
+    display: grid;
+    place-items: center;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    &:hover{
+        @include image-animation-limite-scale(0.6s);
+    }
+    p{
+        font-size: 1.5vw;
+    }
+
+}
+
+.social{
+    margin-top: 50px;
+    i{
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+        padding: 15px;
+        border-radius: 30%;
+        &:hover{
+            @include image-animation-rotate(0.3s)
+        }
+    }
+    h4{
+        display: none;
+    }
+}
+.footer{
+    width: 100%;
+    padding: 30px;
+    border-top: 1px solid $main_color;
+    .footer-cont{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        span{
+            color: initial;
+        }
+        .row-list{
+            display: flex;
+            justify-content: space-between;
+            a{
+                padding: 5px;
+                margin: 3px;
+                text-decoration: none;
+                color: inherit;
+                @include animate-up(1.1);
+                @include line-from-left(0.5s, $main_color, 0, -3);
+            }
+        }
+    }
+   
+
+}
+
+

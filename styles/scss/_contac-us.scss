@@ -1,0 +1,66 @@
+.cont{
+    margin-bottom: 100px;
+}
+
+.maps{
+    display: grid;
+    place-items: center;
+    margin-bottom: 100px;
+    iframe{
+        height: 200px;
+        width: 70%;
+    }
+}
+
+.form{
+    width:50%;
+    margin: auto;
+    textarea{
+        border:1px solid $main_color;
+        border-radius: 10px;
+    }
+    button {
+        color: white;
+        background-color: $main_color;
+        border: none;
+        border-radius: 10px;
+        padding: 10px 30px;
+        width: 40%;
+        display: grid;
+        place-items: center;
+        margin: auto;
+        &:hover {
+            background-color: $hover_color;
+        }
+        &:focus {
+            background-color: $focus_color;
+        }
+        &:active {
+            background-color: $main_color;
+        }
+       
+    }
+}
+
+.place-name{
+    display: flex;
+    div{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        input{
+            border:1px solid $main_color;
+            border-radius: 10px;
+        }
+    }
+    .email{
+        flex: 2;
+        margin-right: 10px;
+    }
+}
+.text{
+    p{
+        width: 50%;
+        margin: auto;
+    }
+}

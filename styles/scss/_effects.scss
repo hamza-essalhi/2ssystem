@@ -1,0 +1,105 @@
+@mixin line-from-left($duration, $bg,$right,$num) {
+	position: relative;
+	&:before {
+		content: "";
+		position: absolute;
+		z-index: $num;
+		left: 0;
+		right: 100%;
+		bottom: 0;
+		background: $bg;
+		height: 2px;
+		transition-property: right;
+		transition-duration: $duration;
+		transition-timing-function: ease-out;
+	}
+	&:hover,
+	&:focus,
+	&:active {
+		&:before {
+			right: $right;
+		}
+	}
+}
+
+@mixin round-corne($duration,$bg) {
+	transition-property: border-radius;
+	transition-duration: $duration;
+	transition-timing-function: ease-out;
+	&:hover,
+	&:focus,
+	&:active {
+		background-color: $bg;
+		border-radius: 1em;
+	}
+}
+
+@mixin animate-up($num){
+		transform: perspective(1px) translateZ(0);
+		box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+		transition-duration: 0.3s;
+		transition-property: transform;
+	&:hover,
+	&:focus,
+	&:active {
+		transform: scale($num);
+	}
+}
+
+
+
+@mixin color-moving-h1 {
+	animation: gradient 5s  infinite;
+	animation-direction: alternate;
+	@keyframes gradient {
+		from{
+			color: #67bce0;
+			transform: translateX(9PX);
+		}
+		to{
+			color: #0c6991;
+			transform: translateX(-9px);
+		}
+		
+	}
+}
+
+
+
+@mixin image-animation($up,$time){
+	animation: image-animation $time infinite;
+    animation-direction:alternate ;
+	@keyframes image-animation {
+        0%{transform:translateY(0);}
+        50%{transform: translateY($up);}
+        100%{transform:translateY(0);}
+
+    }
+}
+@mixin image-animation-limite-scale($time){
+	animation: image-animation-limite-scale $time;
+	animation-fill-mode: forwards;
+	@keyframes image-animation-limite-scale {
+        0%{transform:translateY(1px)scale(1) ;}
+        100%{transform:translateY(-30px) scale(0.95);
+			box-shadow: #67bce0 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 3px;
+			color:#67bce0}
+
+    }
+}
+
+
+@mixin image-animation-rotate($time) {
+	animation: image-animation-rotate $time;
+	animation-fill-mode: forwards;
+	@keyframes image-animation-rotate {
+        0%{transform:rotate(10deg)}
+		40%{transform:rotate(0deg)}
+		60%{transform:rotate(-10deg)}
+		100%{transform:rotate(0deg)scale(1.1);
+			box-shadow: #67bce0 0px 1px 10px, rgba(0, 0, 0, 0.24) 0px 1px 10px;
+		color:#67bce0}
+
+
+    }
+}
